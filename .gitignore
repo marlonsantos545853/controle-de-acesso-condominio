@@ -1,0 +1,70 @@
+# Arquivos e pastas do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Ambiente virtual (exemplo com venv, pode ajustar se o nome for outro)
+venv/
+env/
+ENV/
+.venv/
+
+# Configurações do VS Code
+.vscode/
+
+# Arquivos de log
+*.log
+
+# Arquivos de banco de dados SQLite
+*.sqlite3
+
+# Arquivos de migração criados automaticamente (se quiser ignorar, mas geralmente NÃO é recomendado ignorar migrations/)
+# Pode remover essa seção se quiser versionar as migrações
+# */migrations/*.pyc
+# */migrations/__pycache__/
+
+# Arquivos estáticos gerados
+staticfiles/
+static/
+
+# Media files (uploads de usuários - geralmente você não versiona)
+media/
+
+# Arquivos temporários e de cache
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Configuração de PyCharm
+.idea/
+
+# Arquivos do sistema operacional
+ehthumbs.db
+Icon?
+
+# Arquivos de coverage / testes
+htmlcov/
+.coverage*
+.tox/
+.nox/
+.pytest_cache/
+.coverage.*
+
+# Arquivos de build Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*migrations*
+
+# Secret keys ou arquivos de env
+.env
+*.env
+.env.*
+

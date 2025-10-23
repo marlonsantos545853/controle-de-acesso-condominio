@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load widget_tweaks %}
+
+<html lang="pt-br">
+    <head>
+        {% include 'includes/head.html' %}
+    </head>
+
+    <body class="bg-gradient-primary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                
+                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                        <img src="/static/img/fake_logo.jpg" class="img-fluid" alt="Logo">
+                                    </div>
+    
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-left mb-5">
+                                            <h1 class="h4 text-gray-900 mb-1">Seja bem-vindo!</h1>
+    
+                                            <p>Faça login para continuar</p>
+                                        </div>
+                                        
+                                        {% if form.errors %}
+                                            <div class="alert alert-warning" role="alert" auto>
+                                                E-mail ou senha incorretos.
+                                            </div>
+                                        {% endif %}
+                                        
+                                        <form method="post" class="user" autocomplete="off">
+                                            {% csrf_token %}
+
+                                            {% for field in form %}
+                                                <div class="form-group col-md-12">
+                                                    {% render_field field placeholder=field.label class="form-control form-control-user" %}
+                                                </div>
+                                            {% endfor %}
+
+                                            <div class="form-group col-md-12">
+                                                <button class="btn btn-primary btn-user btn-block" type="submit">
+                                                    <span class="text">Acessar dashboard</span>
+                                                </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        {% include 'includes/javascript.html' %}
+    </body>
+</html>

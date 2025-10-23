@@ -1,0 +1,59 @@
+{% extends "base.html"%}
+{% load core_tags %}
+
+{% block conteudo %}
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">{{nome_pagina}}</h1>
+        
+        <a href="{{ link_novo }}" class="btn btn-primary btn-icon-split btn-sm">
+            <span class="text">{{ nome_botao_add }}</span>
+            <span class="icon text-white-50">
+                <i class="fas fa-user-plus"></i>
+            </span>
+        </a>
+    </div>
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+            <h6 class="m-0 font-weight-bold text-primary">Lista {{nome_pagina}}</h6>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            {% for coluna in colunas %}
+                                <th>{{ coluna }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for linha in dados %}
+                        <tr>
+                            {% for coluna in colunas %}
+                                {% if coluna == "Detalhes" %}
+                                    <td><a href="{{ linha.Detalhes }}">Editar</a></td>
+                                {% else %}
+                                    <td>{{ linha|get_item:coluna }}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="{{ colunas|length }}" class="text-center">Nenhum dado encontrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock conteudo %}

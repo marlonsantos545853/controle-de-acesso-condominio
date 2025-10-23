@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pt-br">
+    <head>
+        {% include 'includes/head.html' %}
+    </head>
+
+    <body>
+        
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            
+            <!-- 404 Error Text -->
+            <div class="text-center">
+                <div class="error mx-auto" data-text="404">404</div>
+                <p class="lead text-gray-800 mb-5">Pángina não localizada</p>
+                <p class="text-gray-500 mb-0">A Página que você acessou não existe.</p>
+                <a href="{% url 'index' %}">&larr; Voltar para Dashboard</a>
+            </div>
+            
+        </div>
+        <!-- /.container-fluid -->
+        
+        {% include 'includes/javascript.html' %}
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pt-br">
+    <head>
+        {% include 'includes/head.html' %}
+    </head>
+
+    <body id="page-top">
+        <div id="wrapper">
+
+            {% include 'includes/sidebar.html' %}
+
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+
+                    {% include 'includes/navbar.html' %}
+                    
+
+                    <!-- Mensagens -->
+                    {% if messages %}
+                        {% for mensagem in messages %}
+                            <div class="alert alert-{{ mensagem.tags }} alert-dismissible fade show" role="alert">
+                                {{ mensagem }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Conteudo dinamico -->
+                    {% block conteudo %} {% endblock conteudo %}
+
+                    {% include 'includes/footer.html' %}
+                </div>
+            </div>
+            
+            <!-- modais -->
+            {% include 'includes/modal/perfil/trocar_senha.html' %}
+            {% include 'includes/modal/navbar/logout.html' %}
+            {% include 'includes/modal/informacoes_visitantes/relatorio_csv.html' %}
+
+        </div>
+
+        {% include 'includes/javascript.html' %}
+    </body>
+</html>
