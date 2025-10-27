@@ -49,7 +49,7 @@ A aplicação foi desenvolvida com base no curso <a href="https://www.udemy.com/
 <h2 id="started">🚀 Iniciando</h2>
 
 Abaixo estão os passos para executar o projeto localmente.
-Se preferir apenas visualizar a aplicação em funcionamento, acesse a versão em produção (adicione o link aqui, se houver).
+Se preferir apenas visualizar a aplicação em funcionamento, acesse a versão em produção [aqui](https://condominio.mrsdeveloper.pro.br).
 
 <h3>Pré-requisitos</h3>
 
@@ -62,13 +62,13 @@ Antes de começar, verifique se possui instalado:
 <h3>📥 Clonando o repositório</h3>
 
 ```bash
-git clone your-project-url-in-github
+git clone https://github.com/marlonsantos545853/controle-de-acesso-condominio
 ```
 
 <h3>🛠 Criando ambiente virtual</h3>
 
 ```bash
-cd your-project-url-in-github
+cd controle-de-acesso-condominio
 python -m venv venv
 ```
 Ative o ambiente virtual:
